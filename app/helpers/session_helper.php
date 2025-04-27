@@ -9,7 +9,8 @@ function isOrganizer() {
     return isset($_SESSION['user_type']) && $_SESSION['user_type'] === 'organizer';
 }
 
-// Flash message helper
+
+
 // function flash($name = '', $message = '', $class = 'alert alert-success') {
 //     if(!empty($name)) {
 //         if(!empty($message) && empty($_SESSION[$name])) {

@@ -121,25 +121,25 @@ class Users extends Controller {
     public function login() {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-
+            
             $data = [
                 'email' => trim($_POST['email']),
                 'password' => trim($_POST['password']),
                 'email_err' => '',
                 'password_err' => ''
             ];
-
+            
             if (empty($data['email'])) {
                 $data['email_err'] = 'Please enter email';
             }
-
+            
             if (empty($data['password'])) {
                 $data['password_err'] = 'Please enter password';
             }
-
+            
             // Check if user exists
             $loggedInUser = $this->userModel->loginAcrossAllTables($data['email'], $data['password']);
-
+            
             if ($loggedInUser) {
                 // Create session variables based on user type
                 switch($_SESSION['user_type']) {
@@ -151,9 +151,15 @@ class Users extends Controller {
                         $_SESSION['email'] = $loggedInUser->email;
                         redirect('eventmanagement');
                         break;
+                        
                     case 'member':
+                        $_SESSION['user_id'] = $loggedInUser->member_id;
+                        $_SESSION['user_type'] = 'member';
+                        $_SESSION['username'] = $loggedInUser->Username;
+                        $_SESSION['email'] = $loggedInUser->email;
                         redirect('/Member_Homepage/Homepage');
                         break;
+                        
                     case 'artist':
                         $_SESSION['user_id'] = $loggedInUser->Artist_id;
                         $_SESSION['user_type'] = 'artist';
@@ -161,21 +167,23 @@ class Users extends Controller {
                         $_SESSION['email'] = $loggedInUser->email;
                         redirect('Artist_Home/artist_home');
                         break;
+                        
                     case 'supplier':
-                        $_SESSION['user_id'] = $loggedInUser->supplier_id;
+                        // Changed from supplier_id to user_id to match the database column
+                        $_SESSION['user_id'] = $loggedInUser->user_id; 
                         $_SESSION['user_type'] = 'supplier';
-                        $_SESSION['username'] = $loggedInUser->username;
+                        $_SESSION['username'] = $loggedInUser->Username;
                         $_SESSION['email'] = $loggedInUser->email;
-                        redirect('supplier/dashboard');
+                        redirect('VendorMerchandise');
                         break;
-                        case 'merchandise_vendor':
-                            $_SESSION['user_id'] = $loggedInUser->user_id;
-                            $_SESSION['user_type'] = 'merchandise_vendor';
-                            $_SESSION['username'] = $loggedInUser->Username;
-                            $_SESSION['email'] = $loggedInUser->email;
-                            redirect('merchandise_vendor/dashboard');
-                            break;
-                }
+                    case 'merchandise_vendor':
+                        $_SESSION['user_id'] = $loggedInUser->user_id;
+                        $_SESSION['user_type'] = 'merchandise_vendor';
+                        $_SESSION['username'] = $loggedInUser->Username;
+                        $_SESSION['email'] = $loggedInUser->email;
+                        redirect('merchandise_vendor/dashboard');
+                        break;
+            }
             } else {
                 $data['password_err'] = 'Invalid credentials';
                 $this->view('users/v_login', $data);
@@ -187,10 +195,12 @@ class Users extends Controller {
                 'email_err' => '',
                 'password_err' => ''
             ];
-
+            
             $this->view('users/v_login', $data);
         }
     }
+    
+    
 
 
             
@@ -208,7 +218,7 @@ class Users extends Controller {
                         redirect('/organizer/dashboard');
                         break;
                     case 'supplier':
-                        redirect('/supplier/dashboard');
+                        redirect('/VendorMerchandise');
                         break;
                     case 'supplier':
                         redirect('merchandise_vendor/dashboard');

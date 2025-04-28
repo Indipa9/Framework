@@ -1,4 +1,5 @@
-<?php require APPROOT . '/views/inc/header.php'; ?>
+<?php require APPROOT . '/views/inc/header6.php'; ?>
+<?php require APPROOT . '/views/inc/components/topnavbar_eqpsupplier.php'; ?>
 
 <div class="profile-container">
     <!-- Profile Header -->
@@ -453,3 +454,4 @@
     }
 </script>
 
+<?php require APPROOT . '/views/inc/footer.php'; ?>

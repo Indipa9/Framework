@@ -4,8 +4,8 @@ body {
     background: #12092b;
     color: #fff;
   }
-  .navbar {
-    background: #1b1239;
+/*  .navbar {
+    background: white;
     padding: 1rem 2rem;
     display: flex;
     align-items: center;
@@ -21,7 +21,7 @@ body {
   }
   .navbar a.active, .navbar a:hover {
     color: #a78bfa;
-  }
+  }*/
   .content {
     padding: 2rem;
   }

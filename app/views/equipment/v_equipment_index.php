@@ -1,3 +1,6 @@
+<?php require APPROOT . '/views/inc/header6.php'; ?>
+<?php require APPROOT . '/views/inc/components/topnavbar_eqpsupplier.php'; ?>
+
 <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/equipment.css">
 <div class="content">
   <h1 class="title">My Equipment</h1>
@@ -93,3 +96,4 @@
   });
 </script>
 
+<?php require APPROOT . '/views/inc/footer.php'; ?>

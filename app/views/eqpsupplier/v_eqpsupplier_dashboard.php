@@ -2,14 +2,13 @@
 <?php require APPROOT . '/views/inc/components/topnavbar_eqpsupplier.php'; ?>
 
 
-
 <div class="dashboard-container">
     <!-- Dashboard Stats -->
     <div class="stats-container">
         <div class="stat-card">
             <div class="stat-info">
                 <h3>Total Sales</h3>
-                <h2>$12,845</h2>
+                <h2>Rs.52,845/=</h2>
             </div>
             <div class="stat-icon purple">
                 <i class="fas fa-chart-line"></i>
@@ -62,11 +61,11 @@
                         <i class="fas fa-tshirt"></i>
                     </div>
                     <div class="order-details">
-                        <h3>Band T-Shirt XL</h3>
+                        <h3>Portable stages 2</h3>
                         <p>Order #45623</p>
                     </div>
                     <div class="order-price">
-                        $29.99
+                        Rs.25,000/=
                         <span class="order-status paid">Paid</span>
                     </div>
                 </div>
@@ -76,11 +75,11 @@
                         <i class="fas fa-mug-hot"></i>
                     </div>
                     <div class="order-details">
-                        <h3>Custom Mug</h3>
+                        <h3>Pro light package</h3>
                         <p>Order #45622</p>
                     </div>
                     <div class="order-price">
-                        $14.99
+                        Rs.15,000/=
                         <span class="order-status pending">Pending</span>
                     </div>
                 </div>
@@ -98,7 +97,7 @@
                     </div>
                     <div class="notification-content">
                         <h3>New order received</h3>
-                        <p>Order #45623 - Band T-Shirt XL</p>
+                        <p>Order #45623 - DJ equipment set</p>
                         <p class="notification-time">2 minutes ago</p>
                     </div>
                 </div>
@@ -133,12 +132,12 @@
                         <i class="fas fa-tshirt"></i>
                     </div>
                     <div>
-                        <h4>Band T-Shirt</h4>
+                        <h4>Portable stage</h4>
                         <p>#PRD001</p>
                     </div>
                 </div>
-                <div class="product-price">$29.99</div>
-                <div class="product-stock">145</div>
+                <div class="product-price">Rs.12,500/=</div>
+                <div class="product-stock">7</div>
                 <div class="product-status">
                     <span class="status-badge active">Active</span>
                 </div>
@@ -154,12 +153,12 @@
                         <i class="fas fa-mug-hot"></i>
                     </div>
                     <div>
-                        <h4>Custom Mug</h4>
+                        <h4>Pro light package</h4>
                         <p>#PRD002</p>
                     </div>
                 </div>
-                <div class="product-price">$14.99</div>
-                <div class="product-stock">89</div>
+                <div class="product-price">Rs.15,000/=</div>
+                <div class="product-stock">20</div>
                 <div class="product-status">
                     <span class="status-badge active">Active</span>
                 </div>

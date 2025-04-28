@@ -1,8 +1,11 @@
+<?php require APPROOT . '/views/inc/header6.php'; ?>
+<?php require APPROOT . '/views/inc/components/topnavbar_eqpsupplier.php'; ?>
+
 <?php require APPROOT . '/views/inc/header3.php'; ?>
 
 <div style="background:#f5f8fa; min-height:100vh; padding-bottom:3rem;">
     <div style="max-width:900px; margin:0 auto; padding:2rem 1rem;">
-        <h1 style="font-family:'Montserrat',sans-serif; font-weight:700; font-size:2rem; color:#222; margin-bottom:2rem;">Messages</h1>
+        <h1 style="font-family:'Montserrat',sans-serif; font-weight:700; font-size:2rem; color:#222; margin-bottom:2rem;">Rental Requests</h1>
 
         <?php if(isset($_SESSION['message_success'])): ?>
             <div style="background:#d1fae5; color:#065f46; border:1px solid #a7f3d0; border-radius:6px; padding:1rem; margin-bottom:1rem;">
